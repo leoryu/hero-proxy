@@ -1,0 +1,9 @@
+[Unit]
+Description=Hero Proxy
+After=network.target
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/gost -L=:1081 -F=ss+mws://chacha20:123456@xxxx.herokuapp.com:80
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
